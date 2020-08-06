@@ -1,0 +1,7 @@
+{
+  "name": "MyAngelisApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
