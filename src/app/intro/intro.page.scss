@@ -1,0 +1,57 @@
+.background1{
+  background-image: url("src/assets/intro_page/first_full1.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.background2{
+  background-image: url("src/assets/intro_page/first_full2.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.background3{
+  background-image: url("src/assets/intro_page/first_full3.jpg");;
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.smallText{
+  font-size: 15px;
+  color: lightgrey;
+}
+
+.bigText{
+  color:white;
+}
+
+.getStartedBtn{
+  position: absolute;
+  bottom: 50px;
+}
+
+.skipBtn{
+  position: absolute;
+  top: 25px;
+  z-index: 10;
+  float: right;
+  font-size: 17px;
+  background-color: transparent;
+  right: 10px;
+  color: ghostwhite;
+  outline: none;
+}
+
+.nextBtn{
+  position: absolute;
+  bottom: 50px;
+  height: 30px;
+  width: 60px;
+  background-color: transparent;
+}

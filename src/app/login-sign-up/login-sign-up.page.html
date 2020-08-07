@@ -1,0 +1,22 @@
+<ion-content>
+  <div style="width:100%;height:100%" class="background">
+    <div>
+      <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon><p style="color: #37474f"><b>Login</b></p></ion-button>
+    </div>
+    <div class="authBtns">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <ion-button [routerLink]="['/login']" class="loginBtn">Login</ion-button>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-button [routerLink]="['/sign-up']" fill="clear">Sign in</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
+
+

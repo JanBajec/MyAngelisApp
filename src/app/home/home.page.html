@@ -1,20 +1,46 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-menu-button [routerLink]="['/menu']" style="color: var(--ion-color-primary)" autoHide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+        <ion-button>
+            <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+        </ion-button>
+        <ion-button>
+            <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-title style="padding: 0">CaShop</ion-title>
+</ion-toolbar>
+<ion-content>
+    <div class="firstCollection">
+        <div class="backgroundOpacity">
+            <p class="firstCollectionText">MAN <br>COLLECTION</p>
+        </div>
+    </div>
+    <div class="collections col1">
+        <div class="backgroundOpacity">
+            <p class="collectionsText">NEW ARRIVALS</p>
+        </div>
+    </div>
+    <div class="collections col2">
+        <div class="backgroundOpacity">
+            <p class="collectionsText">BEST SELLER</p>
+        </div>
+    </div>
+    <div class="collections col3">
+        <div class="backgroundOpacity">
+            <p class="collectionsText">WOMEN</p>
+        </div>
+    </div>
+    <div class="collections col4">
+        <div class="backgroundOpacity">
+            <p class="collectionsText">MEN</p>
+        </div>
+    </div>
+    <div class="collections col5">
+        <div class="backgroundOpacity">
+            <p class="collectionsText">KIDS</p>
+        </div>
+    </div>
 </ion-content>

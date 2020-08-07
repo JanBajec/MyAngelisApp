@@ -1,0 +1,70 @@
+<ion-content>
+  <div style="width:100%;height:85%">
+    <div>
+      <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon><p style="color: #37474f"><b>Sign Up</b></p></ion-button>
+    </div>
+    <div>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Name</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Email</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-md-4 size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Address</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-md-4 size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Phone number</ion-label>
+              <ion-input type="tel"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-md="4" size="10" offset="1" offset-md="4">
+            <ion-button class="SignInBtn">SIGN UP</ion-button>
+          </ion-col>
+          <ion-col size-md="4" size-xs="10" offset-xs="1" offset-md="4">
+            <p class="termsText">By clicking Sign Up you are in agreement of the</p>
+            <div class="termsLinkDiv">
+              <a href="www.google.com" class="termsLink">Terms and Conditions</a>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div style="width:100%;height:15%">
+    <ion-grid style="bottom: 50px">
+      <ion-row>
+        <ion-col size-md="6" size-xs="10" offset-xs="1" offset-md="3" style="bottom: 0px">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="8" style="text-align: right">
+                <p>Already have account?<p>
+              </ion-col>
+              <ion-col size="4" style="text-align: left">
+                <ion-button [routerLink]="['/login']" fill="outline">LOGIN</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

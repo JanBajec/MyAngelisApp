@@ -1,0 +1,61 @@
+<ion-content>
+  <div style="width:100%;height:85%">
+    <div>
+      <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon><p style="color: #37474f"><b>Login</b></p></ion-button>
+    </div>
+    <div>
+      <ion-grid style="margin-top: 15%">
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Email</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <ion-button style="width: 100%" fill="clear"><p class="smallText">Forgot your password?</p></ion-button>
+          </ion-col>
+          <ion-col size-md="4" size="10" offset="1" offset-md="4">
+            <ion-button [routerLink]="['/home/']" class="loginBtn">Login</ion-button>
+          </ion-col>
+          <ion-col size-md="4" size-xs="10" offset-xs="1" offset-md="4">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <p style="margin-top: 5px" class="orLoginWith">Or login with<p>
+                </ion-col>
+                <ion-col size="6">
+                  <ion-icon (click)="$event" class="loginIcons" name="logo-facebook"></ion-icon><ion-icon class="loginIcons" name="logo-google"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div style="width:100%;height:15%">
+    <ion-grid style="bottom: 50px">
+      <ion-row>
+        <ion-col size-md="6" size-xs="10" offset-xs="1" offset-md="3" style="bottom: 0px">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="7" style="text-align: right">
+                <p>Dont have account?<p>
+              </ion-col>
+              <ion-col size="5" style="text-align: left">
+                <ion-button [routerLink]="['/sign-up']" fill="outline">SIGN UP</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

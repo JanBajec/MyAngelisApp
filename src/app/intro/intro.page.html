@@ -1,0 +1,59 @@
+<ion-content>
+  <ion-slides #slides pager="true" class="intro" style="width:100%;height:100%">
+    <ion-slide class="background1">
+      <button class="skipBtn" (click)="onSkip()">Skip</button>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8" offset="2">
+            <h1 class="bigText">Welcome to Cashop</h1>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <p class="smallText">Let's fashion shop follow you to anywhere</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="nextBtn" fill="clear" (click)="onNext()"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    </ion-slide>
+    <ion-slide class="background2">
+      <button class="skipBtn" (click)="onSkip()">Skip</button>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8" offset="2">
+            <h1 class="bigText">Everything in your hand</h1>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <p class="smallText">Let's fashion shop follow you to anywhere</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="nextBtn" fill="clear" (click)="onNext()"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    </ion-slide>
+    <ion-slide class="background3">
+      <button class="skipBtn" (click)="onSkip()">Skip</button>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8" offset="2">
+            <h1 class="bigText">Many products</h1>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <p class="smallText">Let's fashion shop follow you to anywhere</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="nextBtn" fill="clear" (click)="onNext()"><ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+    </ion-slide>
+    <ion-slide class="background1">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8" offset="2">
+            <h1 class="bigText">Let's start SHOP</h1>
+          </ion-col>
+          <ion-col size="8" offset="2">
+            <p class="smallText">Let's fashion shop follow you to anywhere</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-button class="getStartedBtn" [routerLink]="['/login-sign-up']">Get Started</ion-button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

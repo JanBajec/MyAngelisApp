@@ -1,27 +1,96 @@
-#container {
+.backgroundOpacity{
+  width:100%;
+  height:100%;
+  background-color:rgba(0, 0, 0, 0.3);
+}
+
+.firstCollection{
+  background-image: url("src/assets/colections/men-collection.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+  margin-bottom: 10px;
+  border-radius: 2px;
+}
+
+.firstCollectionText{
+  font-size: 30px;
+  color: white;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 0;
+  padding-top: 200px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.collections{
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 180px;
+  margin-bottom: 10px;
+  border-radius: 2px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.collectionsText{
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  padding-top: 70px;
 }
 
-#container a {
-  text-decoration: none;
+.col1{
+  background-image: url('src/assets/colections/new-arivals.jpg');
+  background-position: center bottom;
+}
+.col2{
+  background-image: url('src/assets/colections/best-seller.jpg');
+  background-position: center bottom;
+}
+.col3{
+  background-image: url('src/assets/colections/women.jpg');
+  background-position: center bottom;
+}
+.col4{
+  background-image: url('src/assets/colections/man.jpg');
+  background-position: center top;
+}
+.col5{
+  background-image: url('src/assets/colections/kids.jpg');
+  background-position: center top;
+}
+
+@media only screen and (min-width: 786px) {
+  .firstCollection{
+    background-image: url("src/assets/colections/men-collection.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+
+  .firstCollectionText{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 300px;
+  }
+
+  .collections{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+  }
+
+  .collectionsText{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 150px;
+  }
 }
