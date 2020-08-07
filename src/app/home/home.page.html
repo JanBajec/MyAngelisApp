@@ -3,14 +3,14 @@
         <ion-menu-button [routerLink]="['/menu']" style="color: var(--ion-color-primary)" autoHide="false"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="secondary">
-        <ion-button>
+        <ion-button [routerLink]="['/search']">
             <ion-icon slot="icon-only" name="search-outline"></ion-icon>
         </ion-button>
-        <ion-button>
+        <ion-button [routerLink]="['/cart']">
             <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-title style="padding: 0">CaShop</ion-title>
+    <ion-title style="padding: 0"><b>CaShop</b></ion-title>
 </ion-toolbar>
 <ion-content>
     <div class="firstCollection">

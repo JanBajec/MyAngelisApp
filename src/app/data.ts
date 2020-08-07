@@ -1,7 +1,7 @@
 import {Price} from './price';
 import {Location} from './location';
 import {Plans} from './plans';
-import {Tag} from "./tag";
+import {Tag} from './tag';
 
 export class Data {
   spId?: string;
