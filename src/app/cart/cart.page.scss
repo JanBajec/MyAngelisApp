@@ -1,6 +1,37 @@
 .catItemDiv{
   height: 150px;
+  min-height: 150px;
   width: 100%;
+}
+
+.cartItemsDiv{
+
+}
+
+.bottomMargin{
+  margin-bottom: 135px;
+}
+
+.cartItemImg{
+  height: 100px;
+  object-fit: cover;
+}
+
+.checkoutDiv{
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  height: 130px;
+}
+
+.totalAmount{
+  text-align: right;
+  margin-top: 0;
+}
+
+.totalText{
+  margin-top: 0;
 }
 
 .catItemEditDiv{

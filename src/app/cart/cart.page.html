@@ -16,39 +16,104 @@
 </ion-toolbar>
 <ion-content>
   <div *ngIf="cartItems !== null; else emptyCart">
-    <div *ngFor="let cartItem of cartItems" class="catItemDiv">
-      <div *ngIf="!edit; else cartItemEditDiv">
-        <ion-grid>
-          <ion-row>
-            <ion-col size="10" offset="1">
-              <ion-item-divider>
-                <ion-grid>
-                  <ion-row>
-                    <ion-col size="3">
-                      <img src="{{cartItem.primaryMediaUrl}}">
-                    </ion-col>
-                    <ion-col size="9">
-                      <ion-text><b>{{cartItem.cardTitle}}</b></ion-text>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
-              </ion-item-divider>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </div>
-      <ng-template #cartItemEditDiv>
-        <div class="catItemDiv">
+    <div>
+      <div *ngFor="let cartItem of cartItems">
+        <div *ngIf="!edit; else cartItemEditDiv">
           <ion-grid>
             <ion-row>
-              <ion-col>
-                <ion-item-divider></ion-item-divider>
+              <ion-col size="10" offset="1">
+                <ion-item-divider class="catItemDiv">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="4">
+                        <img class="cartItemImg" src="{{cartItem.primaryMediaUrl}}">
+                      </ion-col>
+                      <ion-col size="8">
+                        <ion-text><b>{{cartItem.cardTitle}}</b></ion-text>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-item-divider>
               </ion-col>
             </ion-row>
           </ion-grid>
         </div>
-      </ng-template>
+        <ng-template #cartItemEditDiv>
+          <div class="catItemDiv">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="10" offset="1">
+                  <ion-item-divider>
+                    <ion-grid>
+                      <ion-row>
+                        <ion-col size="1">
+                          <ion-checkbox style="z-index: 0"></ion-checkbox>
+                        </ion-col>
+                        <ion-col size="11">
+                          <ion-grid>
+                            <ion-row>
+                              <ion-col size="4">
+                                <img class="cartItemImg" src="{{cartItem.primaryMediaUrl}}">
+                              </ion-col>
+                              <ion-col size="8">
+                                <ion-text><b>{{cartItem.cardTitle}}</b></ion-text>
+                              </ion-col>
+                            </ion-row>
+                          </ion-grid>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item-divider>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </ng-template>
+      </div>
     </div>
+    <div class="bottomMargin"></div>
+    <div class="checkoutDiv" *ngIf="!edit; else cartCheckoutEditDiv">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10" size-md="6" size-lg="4" offset="1" offset-md="3" offset-lg="4">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="6">
+                  <p class="totalText">Total</p>
+                </ion-col>
+                <ion-col size="6">
+                  <p class="totalAmount">200€</p>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-col>
+          <ion-col size="10" size-md="6" size-lg="4" offset="1" offset-md="3" offset-lg="4">
+            <ion-button style="width: 100%">CHECKOUT</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <ng-template #cartCheckoutEditDiv>
+      <div class="checkoutDiv">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10" size-md="6" size-lg="4" offset="1" offset-md="3" offset-lg="4">
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="5">
+                    <ion-button style="width: 100%" fill="outline" color="danger">DELETE</ion-button>
+                  </ion-col>
+                  <ion-col size="2"></ion-col>
+                  <ion-col size="5">
+                    <ion-button style="width: 100%" fill="outline" color="dark">BUY LATER</ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ng-template>
   </div>
   <ng-template #emptyCart>
     <div style="width:100%;height:100%">
