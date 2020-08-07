@@ -10,7 +10,7 @@ import {Data} from '../data';
 })
 export class CartPage implements OnInit {
 
-  edit = !false;
+  edit = false;
   cartItems: Data[] = [
     {
       'campaignId': 'CN201701188',
