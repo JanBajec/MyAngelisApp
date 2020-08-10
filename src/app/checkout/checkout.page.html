@@ -1,0 +1,151 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button *ngIf="!paymentShowBool" fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+    <ion-button *ngIf="paymentShowBool" fill="clear" (click)="goToCheckout()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+  </ion-buttons>
+</ion-toolbar>
+              <!-- CHECKOUT & PAYMENT MAIN -->
+<ion-content>
+  <ion-item-divider>
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="2">
+          <ion-text [routerLink]="['/cart']" style="outline: none">CART</ion-text>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-col>
+        <ion-col size="4">
+          <ion-text (click)="goToCheckout()" [style.font-weight]="checkoutStyle">CHECKOUT</ion-text>
+        </ion-col>
+        <ion-col size="1">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-col>
+        <ion-col size="4">
+          <ion-text (click)="goToPayment()" [style.font-weight]="paymentStyle" >PAYMENT</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-divider>
+<ion-content>
+                              <!-- CHECKOUT -->
+    <div *ngIf="!paymentShowBool">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input [(ngModel)]="myProfile.name"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Phone</ion-label>
+              <ion-input [(ngModel)]="myProfile.phoneNum"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Address</ion-label>
+              <ion-input [(ngModel)]="myProfile.address"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col col-md-4 size="10" offset="1">
+            <ion-item>
+              <ion-label class="inputLable" position="floating">Zip code</ion-label>
+              <ion-input [(ngModel)]="myProfile.zipCode"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div style="margin-top: 100px">
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="4" size="10" offset="1" offset-md="4">
+              <ion-button (click)="goToPayment()" class="SignInBtn">PAYMENT</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+                            <!-- PAYMENT -->
+    <div *ngIf="paymentShowBool">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="6" offset="0" offset-md="3" style="margin-top: 35px">
+            <ion-title><b>Complete your order</b></ion-title>
+          </ion-col>
+          <ion-col size="11">
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-text><b>{{myProfile.name}}</b></ion-text><br>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>{{myProfile.address}}</ion-text><br>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>{{myProfile.phoneNum}}</ion-text><br>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>{{myProfile.zipCode}}</ion-text>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon style="margin-top: 50px" name="chevron-forward-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="11">
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-text><b>{{typeOfDelivery}} Delivery</b></ion-text><br>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>{{deliveryDate}}</ion-text><br>
+                  </ion-col>
+                  <ion-col size="12">
+                    <ion-text>Cost {{deliveryCost}}€</ion-text><br>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon style="margin-top: 30px" name="chevron-forward-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="11" [routerLink]="['/select-payment']">
+            <ion-item>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="12">
+                    <ion-text><b>Payment Method</b></ion-text><br>
+                  </ion-col>
+                  <ion-col size="12" *ngIf="myProfile.card.method === undefined">
+                    <ion-text>Select an payment method</ion-text><br>
+                  </ion-col>
+                  <ion-col size="12" *ngIf="myProfile.card.method !== undefined">
+                    <ion-text>{{myProfile.card.method}}: {{myProfile.card.number}}</ion-text><br>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-col>
+          <ion-col size="1">
+            <ion-icon style="margin-top: 30px" name="chevron-forward-outline"></ion-icon>
+          </ion-col>
+          <ion-col size="10" offset="1" class="ion-text-center" style="margin-top: 50px">
+            <ion-text>Free shipping for order over 250€</ion-text>
+          </ion-col>
+          <ion-col *ngIf="everythingSelected()" size="10" offset="1">
+            <ion-button style="width: 100%">BUY</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-content>
+</ion-content>

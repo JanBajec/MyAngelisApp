@@ -1,0 +1,49 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
+  <ion-title style="margin-bottom: 20px"><b>Select Payment Methode</b></ion-title>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="11">
+        <ion-item (click)="selectPaymentMethodInfo('Apple Pay')" [routerLink]="['/payment-info']">
+          <ion-icon style="padding-right: 10px" name="card-outline"></ion-icon>
+          <ion-text>Apple Pay</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon style="margin-top: 10px" name="chevron-forward-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="11">
+        <ion-item (click)="selectPaymentMethodInfo('VISA')" [routerLink]="['/payment-info']">
+          <ion-icon style="padding-right: 10px" name="card-outline"></ion-icon>
+          <ion-text>VISA</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon style="margin-top: 10px"  name="chevron-forward-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="11">
+        <ion-item (click)="selectPaymentMethodInfo('MasterCard')" [routerLink]="['/payment-info']">
+          <ion-icon style="padding-right: 10px" name="card-outline"></ion-icon>
+          <ion-text>MasterCard</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon style="margin-top: 10px"  name="chevron-forward-outline"></ion-icon>
+      </ion-col>
+      <ion-col size="11">
+        <ion-item (click)="selectPaymentMethodInfo('Local Debit')" [routerLink]="['/payment-info']">
+          <ion-icon style="padding-right: 10px" name="card-outline"></ion-icon>
+          <ion-text>Local Debit</ion-text>
+        </ion-item>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon style="margin-top: 10px"  name="chevron-forward-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

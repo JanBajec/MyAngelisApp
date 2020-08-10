@@ -10,37 +10,143 @@
             <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
         </ion-button>
     </ion-buttons>
-    <ion-title style="padding: 0"><b>CaShop</b></ion-title>
+    <ion-title [routerLink]="['/items']" style="padding: 0"><b>CaShop</b></ion-title>
 </ion-toolbar>
 <ion-content>
-    <div class="firstCollection">
+    <div class="firstCollection" [routerLink]="['/man-collection']">
         <div class="backgroundOpacity">
             <p class="firstCollectionText">MAN <br>COLLECTION</p>
         </div>
     </div>
-    <div class="collections col1">
+    <div (click)="newArrivalsSubpage = !newArrivalsSubpage" class="collections col1">
         <div class="backgroundOpacity">
             <p class="collectionsText">NEW ARRIVALS</p>
         </div>
     </div>
-    <div class="collections col2">
+    <div *ngIf="newArrivalsSubpage">
+        <div class="subCollections col1" (click)="newArrivalsSubpageText1 = !newArrivalsSubpageText1">
+            <div class="backgroundOpacity">
+                <p class="collectionsText">NEW ARRIVALS1</p>
+            </div>
+        </div>
+        <div class="ion-text-center" *ngIf="newArrivalsSubpageText1">
+            <p class="subCollectionsText">NEW IN</p><br>
+            <p class="subCollectionsText">COAT</p><br>
+            <p class="subCollectionsText">DRESS</p><br>
+            <p class="subCollectionsText">SHIRTS</p><br>
+            <p class="subCollectionsText">SHOES</p><br>
+        </div>
+        <div class="subCollections col1" (click)="newArrivalsSubpageText2 = !newArrivalsSubpageText2">
+            <div class="backgroundOpacity">
+                <p class="collectionsText">NEW ARRIVALS2</p>
+            </div>
+        </div>
+        <div class="ion-text-center" *ngIf="newArrivalsSubpageText2">
+            <p class="subCollectionsText">NEW IN</p><br>
+            <p class="subCollectionsText">COAT</p><br>
+            <p class="subCollectionsText">DRESS</p><br>
+            <p class="subCollectionsText">SHIRTS</p><br>
+            <p class="subCollectionsText">SHOES</p><br>
+        </div>
+        <div class="subCollections col1" (click)="newArrivalsSubpageText3 = !newArrivalsSubpageText3">
+            <div class="backgroundOpacity">
+                <p class="collectionsText">NEW ARRIVALS3</p>
+            </div>
+        </div>
+        <div class="ion-text-center" *ngIf="newArrivalsSubpageText3">
+            <p class="subCollectionsText">NEW IN</p><br>
+            <p class="subCollectionsText">COAT</p><br>
+            <p class="subCollectionsText">DRESS</p><br>
+            <p class="subCollectionsText">SHIRTS</p><br>
+            <p class="subCollectionsText">SHOES</p><br>
+        </div>
+    </div>
+    <div (click)="bestSellerSubpage = !bestSellerSubpage" class="collections col2">
         <div class="backgroundOpacity">
             <p class="collectionsText">BEST SELLER</p>
         </div>
     </div>
-    <div class="collections col3">
+    <div *ngIf="bestSellerSubpage">
+        <div class="subCollections col2">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col2">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col2">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+    </div>
+    <div (click)="womenSubpage = !womenSubpage" class="collections col3">
         <div class="backgroundOpacity">
             <p class="collectionsText">WOMEN</p>
         </div>
     </div>
-    <div class="collections col4">
+    <div *ngIf="womenSubpage">
+        <div class="subCollections col3">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col3">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col3">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+    </div>
+    <div (click)="menSubpage = !menSubpage" class="collections col4">
         <div class="backgroundOpacity">
             <p class="collectionsText">MEN</p>
         </div>
     </div>
-    <div class="collections col5">
+    <div *ngIf="menSubpage">
+        <div class="subCollections col4">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col4">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col4">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+    </div>
+    <div (click)="kidsSubpage = !kidsSubpage" class="collections col5">
         <div class="backgroundOpacity">
             <p class="collectionsText">KIDS</p>
+        </div>
+    </div>
+    <div *ngIf="kidsSubpage">
+        <div class="subCollections col5">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col5">
+            <div class="backgroundOpacity">
+
+            </div>
+        </div>
+        <div class="subCollections col5">
+            <div class="backgroundOpacity">
+
+            </div>
         </div>
     </div>
 </ion-content>

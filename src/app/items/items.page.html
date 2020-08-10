@@ -1,0 +1,62 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button [routerLink]="['/menu']" style="color: var(--ion-color-primary)" autoHide="false"></ion-menu-button>
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+    <ion-button [routerLink]="['/search']">
+      <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+    </ion-button>
+    <ion-button [routerLink]="['/cart']">
+      <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title style="padding: 0"><b>CaShop</b></ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <ion-item-divider>
+    <ion-grid>
+      <ion-row class="ion-text-center">
+        <ion-col size="3">
+          <ion-text>BASIC</ion-text>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text>VEST</ion-text>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text>BODY</ion-text>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text>SLIM FIT</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-divider>
+  <ion-content>
+
+<ion-content>
+  <ion-slides pager="true" style="height: 35%">
+    <ion-slide>
+      Slika 1
+    </ion-slide>
+    <ion-slide>
+      Slika 2
+    </ion-slide>
+    <ion-slide>
+      Slika 3
+    </ion-slide>
+  </ion-slides>
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of items">
+        <div [routerLink]="['/item', item.id]" class="itemCard">
+          <div class="itemCardImg">
+            <ion-img [src]="item.primaryMediaUrl"></ion-img>
+          </div>
+          <ion-text><b>{{item.cardTitle}}</b></ion-text><br>
+          <ion-text>{{getPrice(item.id)}}€</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

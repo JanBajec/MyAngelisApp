@@ -43,6 +43,34 @@ const routes: Routes = [
     path: 'cart',
     loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
   },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
+  },
+  {
+    path: 'select-payment',
+    loadChildren: () => import('./select-payment/select-payment.module').then( m => m.SelectPaymentPageModule)
+  },
+  {
+    path: 'payment-info',
+    loadChildren: () => import('./payment-info/payment-info.module').then( m => m.PaymentInfoPageModule)
+  },
+  {
+    path: 'man-collection',
+    loadChildren: () => import('./man-collection/man-collection.module').then( m => m.ManCollectionPageModule)
+  },
+  {
+    path: 'girl-collection',
+    loadChildren: () => import('./girl-collection/girl-collection.module').then( m => m.GirlCollectionPageModule)
+  },
+  {
+    path: 'item/:id',
+    loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
+  },
+  {
+    path: 'items',
+    loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+  },
 ];
 
 @NgModule({

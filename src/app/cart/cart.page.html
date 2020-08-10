@@ -6,18 +6,18 @@
   </ion-buttons>
   <ion-title style="padding: 0"><b>Cart</b></ion-title>
   <ion-buttons slot="secondary">
-    <ion-button *ngIf="!edit; else okIcon">
+    <ion-button (click)="edit = !edit" *ngIf="!edit; else okIcon">
       <ion-icon name="pencil-sharp"></ion-icon>
     </ion-button>
     <ng-template #okIcon>
-      <ion-button>OK</ion-button>
+      <ion-button (click)="edit = !edit">OK</ion-button>
     </ng-template>
   </ion-buttons>
 </ion-toolbar>
 <ion-content>
-  <div *ngIf="cartItems !== null; else emptyCart">
+  <div *ngIf="cartProducts !== null; else emptyCart">
     <div>
-      <div *ngFor="let cartItem of cartItems">
+      <div *ngFor="let cartItem of cartProducts; let i = index">
         <div *ngIf="!edit; else cartItemEditDiv">
           <ion-grid>
             <ion-row>
@@ -26,10 +26,14 @@
                   <ion-grid>
                     <ion-row>
                       <ion-col size="4">
-                        <img class="cartItemImg" src="{{cartItem.primaryMediaUrl}}">
+                        <img class="cartItemImg" src="{{cartItem.item.primaryMediaUrl}}">
                       </ion-col>
                       <ion-col size="8">
-                        <ion-text><b>{{cartItem.cardTitle}}</b></ion-text>
+                        <ion-text class="ion-text-uppercase" style="color: #191919"><b>{{cartItem.item.cardTitle}}</b></ion-text><br><br>
+                        <ion-text class="ion-text-uppercase">COLOR</ion-text><br>
+                        <ion-text class="ion-text-uppercase">SIZE</ion-text><br><br>
+                        <ion-text>{{cartItem.quantity}}x {{getPrice(cartItem.item.id)}}€</ion-text>
+                        <ion-title class="cartItemValueWithQuantity"><b>{{getPriceWithQuantity(cartItem)}}€</b></ion-title>
                       </ion-col>
                     </ion-row>
                   </ion-grid>
@@ -42,28 +46,42 @@
           <div class="catItemDiv">
             <ion-grid>
               <ion-row>
-                <ion-col size="10" offset="1">
-                  <ion-item-divider>
-                    <ion-grid>
-                      <ion-row>
-                        <ion-col size="1">
-                          <ion-checkbox style="z-index: 0"></ion-checkbox>
-                        </ion-col>
-                        <ion-col size="11">
+                <ion-col size="12" size-md="8" offset-md="2">
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="1">
+                        <ion-checkbox [(ngModel)]="checkedItems[i]" class="cartCheckbox" value="{{i}}"></ion-checkbox>
+                      </ion-col>
+                      <ion-col size="11">
+                        <ion-item-divider class="catItemDiv">
                           <ion-grid>
                             <ion-row>
-                              <ion-col size="4">
-                                <img class="cartItemImg" src="{{cartItem.primaryMediaUrl}}">
+                              <ion-col size="5">
+                                <img class="cartItemImg" src="{{cartItem.item.primaryMediaUrl}}">
                               </ion-col>
-                              <ion-col size="8">
-                                <ion-text><b>{{cartItem.cardTitle}}</b></ion-text>
+                              <ion-col size="7">
+                                <ion-text class="ion-text-uppercase" style="color: #191919"><b>{{cartItem.item.cardTitle}}</b></ion-text><br><br>
+                                <ion-text class="ion-text-uppercase">COLOR</ion-text><br><br>
+                                <ion-text class="ion-text-uppercase">SIZE</ion-text><br><br>
+                                <ion-grid style="padding: 0">
+                                  <ion-row>
+                                    <ion-col style="padding: 0" size="7">
+                                      <ion-title class="cartItemValueWithQuantity"><b>{{getPrice(cartItem.item.id)}}€</b></ion-title>
+                                    </ion-col>
+                                    <ion-col style="padding: 0; padding-top: 3px" size="5">
+                                      <button (click)="quantityUpdate(cartItem.item.id, false)" style="background-color: transparent; padding: 0; outline: none; font-size: 15px"><b><</b></button>
+                                      <button disabled style="color: black; background-color: transparent; font-size: 15px"><b>{{cartItem.quantity}}</b></button>
+                                      <button (click)="quantityUpdate(cartItem.item.id, true) "style="background-color: transparent; padding: 0; outline: none; font-size: 15px"><b>></b></button>
+                                    </ion-col>
+                                  </ion-row>
+                                </ion-grid>
                               </ion-col>
                             </ion-row>
                           </ion-grid>
-                        </ion-col>
-                      </ion-row>
-                    </ion-grid>
-                  </ion-item-divider>
+                        </ion-item-divider>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
                 </ion-col>
               </ion-row>
             </ion-grid>
@@ -82,26 +100,27 @@
                   <p class="totalText">Total</p>
                 </ion-col>
                 <ion-col size="6">
-                  <p class="totalAmount">200€</p>
+                  <p class="totalAmount">{{cartSubtotalAmount}}€</p>
                 </ion-col>
               </ion-row>
             </ion-grid>
           </ion-col>
           <ion-col size="10" size-md="6" size-lg="4" offset="1" offset-md="3" offset-lg="4">
-            <ion-button style="width: 100%">CHECKOUT</ion-button>
+            <ion-button [routerLink]="['/checkout/']" style="width: 100%">CHECKOUT</ion-button>
           </ion-col>
         </ion-row>
       </ion-grid>
     </div>
     <ng-template #cartCheckoutEditDiv>
       <div class="checkoutDiv">
+        <br><br>
         <ion-grid>
           <ion-row>
             <ion-col size="10" size-md="6" size-lg="4" offset="1" offset-md="3" offset-lg="4">
               <ion-grid>
                 <ion-row>
                   <ion-col size="5">
-                    <ion-button style="width: 100%" fill="outline" color="danger">DELETE</ion-button>
+                    <ion-button (click)="delete()" style="width: 100%" fill="outline" color="danger">DELETE</ion-button>
                   </ion-col>
                   <ion-col size="2"></ion-col>
                   <ion-col size="5">

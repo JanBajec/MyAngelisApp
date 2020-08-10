@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Data} from './data';
+import {CartProductId} from './cart-product-id';
+import {CartProduct} from './cart-product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +15,11 @@ export class DataService {
       'cardTitle': 'Title 1',
       'cardDescription': 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
       'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
+      'additionalMediaUrls': [
+          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
+          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
+          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg'
+      ],
       'cardStartDate': '0001-01-01T00:00:00Z',
       'cardEndDate': '0001-01-01T00:00:00Z',
       'availableQuantity': 32,
@@ -527,13 +534,26 @@ export class DataService {
     return cartProducts;
   }
 
+  public getCartProductsById(productIds: CartProductId[]): CartProduct[] {
+    const cartProducts: CartProduct[] = [];
+    if (productIds === null || productIds === []) {return cartProducts; }
+    for (const productId of productIds) {
+      for (const product of this.products) {
+        if (productId.itemId === product.id) {
+          cartProducts.push(new CartProduct(product, productId.quantity));
+        }
+      }
+    }
+    return cartProducts;
+  }
+
   public getProductById(id: string): Data {
     for (const product of this.products) {
       if (product.id === id) { return product; }
     }
   }
 
-  public getPrice(productId): number {
+  public getPrice(productId: string): number {
     let amount = 0;
     for (const product of this.products) {
       if (productId === product.id) {

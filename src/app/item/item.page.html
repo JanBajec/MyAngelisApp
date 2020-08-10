@@ -1,0 +1,45 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <div>
+      <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+    </div>
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+    <ion-button [routerLink]="['/cart']">
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content no-bounce>
+  <ion-slides class="itemSlides" [options]="slidesOptions" pager="true" style="height: 70%;">
+    <ion-slide>
+      <ion-img [src]="item.primaryMediaUrl"></ion-img>
+    </ion-slide>
+    <ion-slide *ngFor="let aditionalImgs of item.additionalMediaUrls">
+      <ion-img [src]="aditionalImgs"></ion-img>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
+<ion-bottom-drawer [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight" [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
+  <div class="drawer-content">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="4" offset="4" class="ion-text-center">
+          <ion-icon name="remove"></ion-icon>
+        </ion-col>
+        <ion-col size="12">
+          <ion-text><b>{{item.cardTitle}}</b></ion-text>
+        </ion-col>
+        <ion-col style="padding-top: 20px" size="6">
+          <ion-text>{{getPrice(item.id)}}€</ion-text>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button [routerLink]="['/cart']" [disabled]="checkIfItemInCart(item.id)" (click)="addToCart(item.id)">ADD TO CART</ion-button>
+        </ion-col>
+        <ion-col size="12">
+          <ion-text>{{item.cardDescription}}</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-bottom-drawer>

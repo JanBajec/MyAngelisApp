@@ -11,7 +11,7 @@ export class Data {
   cardTags?: [];
   mediaType?: string;
   primaryMediaUrl?: string;
-  additionalMediaUrls?: [];
+  additionalMediaUrls?: string[];
   callToAction?: string;
   cardStartDate?: string;
   cardEndDate?: string;
