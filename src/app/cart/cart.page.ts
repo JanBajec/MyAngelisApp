@@ -5,6 +5,7 @@ import {CartService} from '../cart.service';
 import {DataService} from '../data.service';
 import {CartProduct} from '../cart-product';
 import {CartProductId} from '../cart-product-id';
+import {Color} from '../color';
 
 @Component({
   selector: 'app-cart',

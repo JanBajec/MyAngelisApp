@@ -58,3 +58,22 @@
   background: #FF8080;
   height: 20px;
 }
+
+.colorCheckBox{
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
+
+.sizeCheckBox{
+  height: 20px;
+  width: 35px;
+  margin: 2px;
+  text-align: center;
+}
+
+.sizeCheckBoxChecked{
+  border-style: solid;
+  border-width: 2px;
+  border-color: orange;
+}

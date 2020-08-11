@@ -1,7 +1,10 @@
-<ion-toolbar>
+<ion-toolbar no-bounce >
   <ion-buttons slot="start">
-    <div>
+    <div *ngIf="!checkIfDrawerTop()">
       <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+    </div>
+    <div *ngIf="checkIfDrawerTop()">
+      <ion-button fill="clear" (click)="drawerToDocked()"><ion-icon name="close-outline"></ion-icon></ion-button>
     </div>
   </ion-buttons>
   <ion-buttons slot="secondary">
@@ -10,8 +13,8 @@
     </ion-button>
   </ion-buttons>
 </ion-toolbar>
-<ion-content no-bounce>
-  <ion-slides class="itemSlides" [options]="slidesOptions" pager="true" style="height: 70%;">
+<ion-content no-bounce fullscreen>
+  <ion-slides class="itemSlides" [options]="slidesOptions" pager="true" style="height: 75%;">
     <ion-slide>
       <ion-img [src]="item.primaryMediaUrl"></ion-img>
     </ion-slide>
@@ -19,6 +22,12 @@
       <ion-img [src]="aditionalImgs"></ion-img>
     </ion-slide>
   </ion-slides>
+  <div style="position: fixed; bottom: 225px; right: 10px; z-index: 10">
+    <div class="colorCheckBox" *ngFor="let color of colors; let i = index" [ngStyle]="{'background-color': color.color}">
+      <ion-icon *ngIf="color.ticked" class="tick" name="checkmark-outline"></ion-icon>
+      <ion-icon (click)="changeColor(i)" *ngIf="!color.ticked" class="tick"></ion-icon>
+    </div>
+  </div>
 </ion-content>
 <ion-bottom-drawer [(state)]="drawerState" [minimumHeight]="minimumHeight" [dockedHeight]="dockedHeight" [shouldBounce]="shouldBounce" [distanceTop]="distanceTop">
   <div class="drawer-content">
@@ -28,16 +37,37 @@
           <ion-icon name="remove"></ion-icon>
         </ion-col>
         <ion-col size="12">
-          <ion-text><b>{{item.cardTitle}}</b></ion-text>
+          <ion-title style="padding: 0"><b>{{item.cardTitle}}</b></ion-title>
         </ion-col>
         <ion-col style="padding-top: 20px" size="6">
-          <ion-text>{{getPrice(item.id)}}€</ion-text>
+          <ion-text><b>{{getPrice(item.id)}}€</b></ion-text>
         </ion-col>
         <ion-col size="6">
           <ion-button [routerLink]="['/cart']" [disabled]="checkIfItemInCart(item.id)" (click)="addToCart(item.id)">ADD TO CART</ion-button>
         </ion-col>
         <ion-col size="12">
+          <ion-text>{{item.cardShortDescription}}</ion-text>
+        </ion-col>
+        <ion-col size="12">
           <ion-text>{{item.cardDescription}}</ion-text>
+        </ion-col>
+        <ion-col size="12" style="height: 35px">
+          <p style="display: inline-block; margin-right: 10px;">COLOR:</p>
+          <div style="display: inline-block;" class="colorCheckBox" *ngFor="let color of colors; let i = index" [ngStyle]="{'background-color': color.color}">
+            <ion-icon *ngIf="color.ticked" class="tick" name="checkmark-outline"></ion-icon>
+            <ion-icon (click)="changeColor(i)" *ngIf="!color.ticked" class="tick"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="12">
+          <p style="display: inline-block; margin-right: 10px;">SIZE:</p>
+          <div style="display: inline-block;" class="sizeCheckBox" *ngFor="let size of sizes; let i = index">
+            <div *ngIf="size.ticked" class="sizeCheckBoxChecked">
+              <ion-text>{{size.size}}</ion-text>
+            </div>
+            <div (click)="changeSize(i)" *ngIf="!size.ticked">
+              <ion-text>{{size.size}}</ion-text>
+            </div>
+          </div>
         </ion-col>
       </ion-row>
     </ion-grid>

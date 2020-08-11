@@ -9,515 +9,152 @@ import {CartProduct} from './cart-product';
 
 export class DataService {
   searchNames: string[] = [];
+
   products: Data[] = [
     {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'Title 1',
-      'cardDescription': 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'additionalMediaUrls': [
-          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-          'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg'
+      id: 'c3d444c3d2774263ab93598fb0705370',
+      cardTitle: 'Title 1',
+      cardShortDescription: 'My short description 1',
+      cardDescription: 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
+      colors: [
+        'red',
+        'black',
+        '#6a1b9a'
       ],
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
+      quality: 'wool',
+      sizes: [
+        'M',
+        'XL',
+        'XXL'
+      ],
+      gender: 'women',
+      categories: [
+          'shirt'
+      ],
+      primaryMediaUrl: 'https://static.zara.net/photos///2020/I/0/1/p/0962/175/250/3/w/538/0962175250_1_1_1.jpg?ts=1596794662787',
+      additionalMediaUrls: [
+        'https://static.zara.net/photos///2020/I/0/1/p/0962/175/250/3/w/538/0962175250_1_1_1.jpg?ts=1596794662787',
+        'https://static.zara.net/photos///2020/I/0/1/p/0962/175/250/3/w/538/0962175250_1_1_1.jpg?ts=1596794662787',
+        'https://static.zara.net/photos///2020/I/0/1/p/0962/175/250/3/w/538/0962175250_1_1_1.jpg?ts=1596794662787'
+      ],
+      listOfPlans: [
+         {
+           price: {
+             amount: 8900,
+             currency: 'EUR',
+             currencySymbol: ''
+           }
+         }
+       ],
+    },
+    {
+      id: 'c3d444c3d2774263ab93598fb0705371',
+      cardTitle: 'Title 2',
+      cardShortDescription: 'My short description 1',
+      cardDescription: 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
+      colors: [
+        'green',
+        'purple',
+        'blue'
+      ],
+      quality: 'wool',
+      sizes: [
+        'XS',
+        'S',
+        'M',
+        'L',
+      ],
+      gender: 'women',
+      categories: [
+          'shirt',
+      ],
+      primaryMediaUrl: 'https://static.zara.net/photos///2020/I/0/1/p/7954/618/715/4/w/538/7954618715_1_1_1.jpg?ts=1597061487798',
+      additionalMediaUrls: [
+        'https://static.zara.net/photos///2020/I/0/1/p/2636/489/505/4/w/538/2636489505_2_1_1.jpg?ts=1597061748464',
+        'https://static.zara.net/photos///rw-center/2020/I/0/1/p/4786/245/712/4/w/1087/4786245712_2_2_1.jpg?ts=1597060658701',
+      ],
+      listOfPlans: [
         {
-          'price': {
-            'amount': 8900,
-            'currency': 'EUR',
-            'currencySymbol': ''
+          price: {
+            amount: 300,
+            currency: 'EUR',
+            currencySymbol: ''
           }
         }
       ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705370',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
     },
     {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'Title 2',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Eclipse-P300-TG/P300_BK-1.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
+      id: 'c3d444c3d2774263ab93598fb0705372',
+      cardTitle: 'Title 3',
+      cardShortDescription: 'My short description 1',
+      cardDescription: 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
+      colors: [
+        'red',
+        'black',
+        '#6a1b9a'
+      ],
+      quality: 'wool',
+      sizes: [
+        'M',
+        'XL',
+        'XXL'
+      ],
+      gender: 'women',
+      categories: [
+        'shirt'
+      ],
+      primaryMediaUrl: 'https://static.zara.net/photos///2020/I/0/1/p/6254/106/737/3/w/538/6254106737_2_1_1.jpg?ts=1597061487763',
+      additionalMediaUrls: [
+        'https://static.zara.net/photos///2020/I/0/1/p/7845/618/715/3/w/538/7845618715_1_1_1.jpg?ts=1597061492279',
+      ],
+      listOfPlans: [
         {
-          'price': {
-            'amount': 900,
-            'currency': 'EUR',
-            'currencySymbol': ''
+          price: {
+            amount: 8900,
+            currency: 'EUR',
+            currencySymbol: ''
           }
         }
       ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705371',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
     },
     {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'Title3',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Eclipse-P300-TG/P300_BK-1.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
+      id: 'c3d444c3d2774263ab93598fb0705373',
+      cardTitle: 'Title 4',
+      cardShortDescription: 'My short description 1',
+      cardDescription: 'y dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
+      colors: [
+        'red',
+        'black',
+        '#6a1b9a'
+      ],
+      quality: 'wool',
+      sizes: [
+        'M',
+        'XL',
+        'XXL'
+      ],
+      gender: 'women',
+      categories: [
+        'shirt'
+      ],
+      primaryMediaUrl: 'https://static.zara.net/photos///2020/I/0/1/p/1014/413/717/2/w/538/1014413717_2_1_1.jpg?ts=1596707770096',
+      additionalMediaUrls: [
+        'https://static.zara.net/photos///rw-center/2020/I/0/1/p/7901/316/742/2/w/1087/7901316742_1_1_1.jpg?ts=1596707776884',
+        'https://static.zara.net/photos///rw-center/2020/I/0/1/p/7901/320/612/2/w/1087/7901320612_2_3_1.jpg?ts=1596707817311',
+      ],
+      listOfPlans: [
         {
-          'price': {
-            'amount': 2900,
-            'currency': 'EUR',
-            'currencySymbol': ''
+          price: {
+            amount: 8900,
+            currency: 'EUR',
+            currencySymbol: ''
           }
         }
       ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705372',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
     },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'Title 4',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 5900,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705373',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'Title5',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 500,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705374',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    },
-    {
-      'spId': '32e70cc6fa544fde966bc852116606f3',
-      'campaignId': 'CN2017012431',
-      'cardTitle': 'Titl6',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'cardTags': [],
-      'mediaType': 'image',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'additionalMediaUrls': [],
-      'callToAction': 'book',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'listOfAttributes': [],
-      'cardQuestion': [],
-      'isPhysicalProduct': false,
-      'availableQuantity': 123,
-      'returnPolicy': 'sdfdssdfsfsfsdf',
-      'termsOfServices': 'sdfsdfsdffds',
-      'likes': 0,
-      'shares': 0,
-      'views': 0,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'planType': 'oneTimeCharges',
-          'planName': '',
-          'planDescription': '',
-          'price': {
-            'amount': 21,
-            'currency': 'USD',
-            'currencySymbol': ''
-          },
-          'isShippingChargesRequired': true,
-          'shippingCharges': {
-            'amount': 0,
-            'currency': '',
-            'currencySymbol': ''
-          },
-          'startsOn': '',
-          'endsOn': '',
-          'displayPrice': {
-            'amount': 0,
-            'currency': '',
-            'currencySymbol': ''
-          },
-          'displayPriceUnit': '',
-          'displayPriceNotes': '',
-          'invoicingCylcle': '',
-          'subsciptionSchedule': {
-            'startDateTime': '0001-01-01T00:00:00Z',
-            'endDateTime': '0001-01-01T00:00:00Z'
-          },
-          'subscriptionPeriod': {
-            'unitOfPeriod': '',
-            'countOfPeriod': 0
-          },
-          'appliesTo': '',
-          'noOfAllowedUsers': 0,
-          'minSubPeriod': {
-            'unitOfPeriod': '',
-            'countOfPeriod': 0
-          },
-          'freeTrialPeriod': {
-            'unitOfPeriod': '',
-            'countOfPeriod': 0
-          },
-/*          'freeTrialPeriod': { je tu mogoce napaka? saj sta imeni isti kot ena višje?
-            'amount': 0,
-            'currency': '',
-            'currencySymbol': ''
-          },*/
-          'id': '1b0f10ad11774e57b7d98061f0039e48'
-        }
-      ],
-      'isLocalPriceViewEnabled': false,
-      'segments': [],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJ2QeB5YMEGTkRYiR-zGy-OsI',
-          'description': 'Lahore, Punjab, Pakistan'
-        }
-      ],
-      'startAgeLimit': 2,
-      'endAgeLimit': 6,
-      'gender': 'men',
-      'groups': [],
-      'interests': [],
-      'currentWorkflow': 'saved',
-      'listOfWorkflowStatuses': [],
-      'listOfReviews': [],
-      'totalReviews': 0,
-      'listOfSupportTags': [
-        {
-          'tagName': 'dfg',
-          'supportContent': 'dfgdfgfgfd'
-        }
-      ],
-      'comulativeRating': 0,
-      'maxQuantityPerUser': 2,
-      'campaignEndDate': '2017-02-11T18:59:59.999Z',
-      'id': '80336072d14a43628e98d89d0f460a25',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T13:39:28.897Z',
-      'updatedAt': '2017-02-06T13:39:28.897Z'
-    },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'title7',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 8900,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {/**/
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705376',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'ATITle8',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 1900,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705377',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'title--9',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 8900,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705378',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    },
-    {
-      'campaignId': 'CN201701188',
-      'cardTitle': 'title--2',
-      'cardDescription': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, ',
-      'primaryMediaUrl': 'http://www.phanteks.com/images/product/Enthoo-Evolv-X/Black/PH-ES518ETG-1z.jpg',
-      'cardStartDate': '0001-01-01T00:00:00Z',
-      'cardEndDate': '0001-01-01T00:00:00Z',
-      'availableQuantity': 32,
-      'likes': 10,
-      'shares': 20,
-      'views': 30,
-      'subscribers': 0,
-      'unSubscribers': 0,
-      'open': 0,
-      'discard': 0,
-      'totalRevenue': 0,
-      'listOfPlans': [
-        {
-          'price': {
-            'amount': 8900,
-            'currency': 'EUR',
-            'currencySymbol': ''
-          }
-        }
-      ],
-      'locations': [
-        {
-          'latitude': '',
-          'longitude': '',
-          'area': '',
-          'city': '',
-          'country': '',
-          'placeId': 'ChIJx8SRZhAEGTkRwsZ7Hq_dJPs',
-          'description': 'New York, New York, USA'
-        }
-      ],
-      'currentWorkflow': 'saved',
-      'campaignEndDate': '2017-02-28T18:59:59.999Z',
-      'id': 'c3d444c3d2774263ab93598fb0705379',
-      'userId': '5d6117b9ae114c83bb53cfdd8c722e78',
-      'createdAt': '2017-02-06T11:14:45.131Z',
-      'updatedAt': '2017-02-06T11:16:44.344Z'
-    }];
+  ];
 
-  homeProducts: Data[] = this.products;
+
 
   public getProducts(): Data[] {
     return this.products;

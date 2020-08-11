@@ -12,24 +12,7 @@ export class CartService {
 
   constructor( private dataService: DataService) {} // public local: LocalStorageService,
 
-  public cartProductIds: CartProductId[] = [
-    {
-      itemId: 'c3d444c3d2774263ab93598fb0705379',
-      quantity: 2
-    },
-    {
-      itemId: 'c3d444c3d2774263ab93598fb0705372',
-      quantity: 4
-    },
-    {
-      itemId: 'c3d444c3d2774263ab93598fb0705374',
-      quantity: 2
-    },
-    {
-      itemId: 'c3d444c3d2774263ab93598fb0705377',
-      quantity: 10
-    }
-  ];
+  public cartProductIds: CartProductId[] = [];
   totalAmount: number;
 
   addToCart(productId: CartProductId): void {

@@ -4,14 +4,20 @@ import {Plans} from './plans';
 import {Tag} from './tag';
 
 export class Data {
+  id?: string;
+  cardTitle?: string;
+  cardShortDescription?: string;
+  cardDescription?: string;
+  colors?: string[];
+  quality?: string;
+  sizes?: string[];
+  categories?: string[];
+  primaryMediaUrl?: string;
+  additionalMediaUrls?: string[]; // dodano za ta app od tu gor
+  cardTags?: [];
   spId?: string;
   campaignId?: string;
-  cardTitle?: string;
-  cardDescription?: string;
-  cardTags?: [];
   mediaType?: string;
-  primaryMediaUrl?: string;
-  additionalMediaUrls?: string[];
   callToAction?: string;
   cardStartDate?: string;
   cardEndDate?: string;
@@ -46,7 +52,6 @@ export class Data {
   comulativeRating?: number;
   maxQuantityPerUser?: number;
   campaignEndDate?: string;
-  id?: string;
   userId?: string;
   createdAt?: string;
   updatedAt?: string;

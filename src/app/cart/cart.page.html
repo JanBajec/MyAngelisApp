@@ -15,7 +15,7 @@
   </ion-buttons>
 </ion-toolbar>
 <ion-content>
-  <div *ngIf="cartProducts !== null; else emptyCart">
+  <div *ngIf="cartSubtotalAmount !== 0; else emptyCart">
     <div>
       <div *ngFor="let cartItem of cartProducts; let i = index">
         <div *ngIf="!edit; else cartItemEditDiv">
