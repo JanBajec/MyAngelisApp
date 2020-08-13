@@ -1,0 +1,54 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <div>
+      <ion-button fill="clear" (click)="onBack()"><ion-icon class="backIcon" name="arrow-back-outline"></ion-icon></ion-button>
+    </div>
+  </ion-buttons>
+  <ion-buttons slot="secondary">
+    <ion-button [routerLink]="['/search']">
+      <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content style="height: 100%">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="10" offset="1">
+        <ion-text class="ion-margin-start"><b>PRICE RANGE</b></ion-text>
+        <ion-range style="padding-top: 15px" dual-knobs="true" min="0" max="1000" [(ngModel)]="knobValues" color="primary" pin="true">
+          <ion-label slot="start">0€</ion-label>
+          <ion-label slot="end">1000€</ion-label>
+        </ion-range>
+        <ion-text class="ion-margin-start"><b>QUALITY</b></ion-text>
+        <div class="scrolling-wrapper ion-margin-start ion-margin-top">
+          <div class="scrolling-card" *ngFor="let quality of qualities; let i = index">
+            <ion-text *ngIf="quality.ticked" class="ion-margin-end ion-text-uppercase"><b>{{quality.quality}}</b></ion-text>
+            <ion-text style="font-size: 13px" (click)="changeQuality(i)" *ngIf="!quality.ticked" class="ion-margin-end ion-text-uppercase">{{quality.quality}}</ion-text>
+          </div>
+        </div>
+        <br>
+        <div class="ion-margin-start ion-margin-top">
+          <div style="display: inline-block;" class="colorCheckBox" *ngFor="let color of colors; let i = index" [ngStyle]="{'background-color': color.color}">
+            <ion-icon (click)="colorUntick(i)" *ngIf="color.ticked" class="tick" name="checkmark-outline"></ion-icon>
+            <ion-icon (click)="changeColor(i)" *ngIf="!color.ticked" class="tick"></ion-icon>
+          </div>
+        </div>
+        <br>
+        <div class="ion-margin-start ion-margin-top">
+          <div style="display: inline-block;" class="sizeCheckBox" *ngFor="let size of sizes; let i = index">
+            <div (click)="sizeUntick(i)" *ngIf="size.ticked" class="sizeCheckBoxChecked">
+              <ion-text>{{size.size}}</ion-text>
+            </div>
+            <div (click)="changeSize(i)" *ngIf="!size.ticked">
+              <ion-text>{{size.size}}</ion-text>
+            </div>
+          </div>
+        </div>
+        <div class="applyBtn">
+          <ion-button (click)="applyFilter()" [routerLink]="['/search-results', searchInput]" style="width: 100%" class="ion-margin">APPLY FILTER</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

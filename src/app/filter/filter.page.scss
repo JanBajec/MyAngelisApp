@@ -1,0 +1,31 @@
+.backIcon{
+  color: #37474f;
+  height: 30px;
+}
+
+.scrolling-wrapper{
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.scrolling-card{
+  display: inline-block;
+}
+
+.tick{
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.applyBtn{
+  bottom: 10px;
+  position: fixed;
+  right: 40px;
+  left: 10px;
+}
+
