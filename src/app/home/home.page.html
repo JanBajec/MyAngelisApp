@@ -6,8 +6,9 @@
         <ion-button [routerLink]="['/search']">
             <ion-icon slot="icon-only" name="search-outline"></ion-icon>
         </ion-button>
-        <ion-button [routerLink]="['/cart']">
+        <ion-button [routerLink]="['/cart']" id="cart-button">
             <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+            <ion-badge *ngIf="getNumOfItemsInCart() > 0" id="cart-badge" slot="end">{{getNumOfItemsInCart()}}</ion-badge>
         </ion-button>
     </ion-buttons>
     <ion-title [routerLink]="['/items']" style="padding: 0"><b>CaShop</b></ion-title>
@@ -18,7 +19,7 @@
             <p class="firstCollectionText">MAN <br>COLLECTION</p>
         </div>
     </div>
-    <div (click)="newArrivalsSubpage = !newArrivalsSubpage" class="collections col1">
+    <div [routerLink]="['/items','new-arrivals']" (click)="newArrivalsSubpage = !newArrivalsSubpage" class="collections col1">
         <div class="backgroundOpacity">
             <p class="collectionsText">NEW ARRIVALS</p>
         </div>
@@ -61,7 +62,7 @@
             <p class="subCollectionsText">SHOES</p><br>
         </div>
     </div>
-    <div (click)="bestSellerSubpage = !bestSellerSubpage" class="collections col2">
+    <div [routerLink]="['/items','best-seller']" (click)="bestSellerSubpage = !bestSellerSubpage" class="collections col2">
         <div class="backgroundOpacity">
             <p class="collectionsText">BEST SELLER</p>
         </div>
@@ -83,7 +84,7 @@
             </div>
         </div>
     </div>
-    <div (click)="womenSubpage = !womenSubpage" class="collections col3">
+    <div [routerLink]="['/items','women']" (click)="womenSubpage = !womenSubpage" class="collections col3">
         <div class="backgroundOpacity">
             <p class="collectionsText">WOMEN</p>
         </div>
@@ -105,7 +106,7 @@
             </div>
         </div>
     </div>
-    <div (click)="menSubpage = !menSubpage" class="collections col4">
+    <div [routerLink]="['/items','men']" (click)="menSubpage = !menSubpage" class="collections col4">
         <div class="backgroundOpacity">
             <p class="collectionsText">MEN</p>
         </div>
@@ -127,7 +128,7 @@
             </div>
         </div>
     </div>
-    <div (click)="kidsSubpage = !kidsSubpage" class="collections col5">
+    <div [routerLink]="['/items','kids']" (click)="kidsSubpage = !kidsSubpage" class="collections col5">
         <div class="backgroundOpacity">
             <p class="collectionsText">KIDS</p>
         </div>

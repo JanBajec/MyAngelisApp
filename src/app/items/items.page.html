@@ -6,8 +6,9 @@
     <ion-button [routerLink]="['/search']">
       <ion-icon slot="icon-only" name="search-outline"></ion-icon>
     </ion-button>
-    <ion-button [routerLink]="['/cart']">
+    <ion-button [routerLink]="['/cart']" id="cart-button">
       <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      <ion-badge *ngIf="getNumOfItemsInCart() > 0" id="cart-badge" slot="end">{{getNumOfItemsInCart()}}</ion-badge>
     </ion-button>
   </ion-buttons>
   <ion-title style="padding: 0"><b>CaShop</b></ion-title>
@@ -15,22 +16,12 @@
 
 <ion-content>
   <ion-item-divider>
-    <ion-grid>
-      <ion-row class="ion-text-center">
-        <ion-col size="3">
-          <ion-text>BASIC</ion-text>
-        </ion-col>
-        <ion-col size="3">
-          <ion-text>VEST</ion-text>
-        </ion-col>
-        <ion-col size="3">
-          <ion-text>BODY</ion-text>
-        </ion-col>
-        <ion-col size="3">
-          <ion-text>SLIM FIT</ion-text>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <div class="scrolling-wrapper">
+      <div class="scrolling-card" *ngFor="let subCat of subCategories; let i = index">
+        <ion-text *ngIf="i !== subCatTickedNum" (click)="setSubCategory(i)" class="ion-margin-end">{{subCat}}</ion-text>
+        <ion-text *ngIf="i === subCatTickedNum" class="ion-margin-end"><b>{{subCat}}</b></ion-text>
+      </div>
+    </div>
   </ion-item-divider>
   <ion-content>
 

@@ -77,3 +77,18 @@
   border-width: 2px;
   border-color: orange;
 }
+
+#cart-badge{ // slab izgled ce je v cartu vec kot 100 stvari.
+  font-size: 9px;
+  height: 14px;
+  width: 18px;
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  border-radius: 100%;
+}
+
+#cart-button{
+  position: relative;
+  overflow: visible!important;
+}

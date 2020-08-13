@@ -6,10 +6,10 @@
   </ion-buttons>
   <ion-item>
     <ion-label position="floating"></ion-label>
-    <ion-input autocorrect="on" placeholder="Search"></ion-input>
+    <ion-input [(ngModel)]="searchInput" placeholder="Search"></ion-input>
   </ion-item>
   <ion-buttons slot="secondary">
-    <ion-button>
+    <ion-button [routerLink]="['/search-results', searchInput]">
       <ion-icon slot="icon-only" name="search-outline"></ion-icon>
     </ion-button>
   </ion-buttons>

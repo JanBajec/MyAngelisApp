@@ -68,8 +68,16 @@ const routes: Routes = [
     loadChildren: () => import('./item/item.module').then( m => m.ItemPageModule)
   },
   {
-    path: 'items',
+    path: 'items/:category',
     loadChildren: () => import('./items/items.module').then( m => m.ItemsPageModule)
+  },
+  {
+    path: 'filter/:search',
+    loadChildren: () => import('./filter/filter.module').then( m => m.FilterPageModule)
+  },
+  {
+    path: 'search-results/:search',
+    loadChildren: () => import('./search-results/search-results.module').then( m => m.SearchResultsPageModule)
   },
 ];
 

@@ -27,6 +27,11 @@ export class CartService {
     return this.cartProductIds;
   }
 
+  getNumOfItemsInCart(): number {
+    return this.cartProductIds.length;
+    console.log(this.cartProductIds.length);
+  }
+
   checkIfAlreadyInCart(productId: string): boolean {
     this.cartProductIds = this.getCart();
     if (this.cartProductIds === null ) {return false; }

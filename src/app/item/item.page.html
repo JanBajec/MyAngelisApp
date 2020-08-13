@@ -8,8 +8,9 @@
     </div>
   </ion-buttons>
   <ion-buttons slot="secondary">
-    <ion-button [routerLink]="['/cart']">
-      <ion-icon name="cart-outline"></ion-icon>
+    <ion-button [routerLink]="['/cart']" id="cart-button">
+      <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      <ion-badge *ngIf="getNumOfItemsInCart() > 0" id="cart-badge" slot="end">{{getNumOfItemsInCart()}}</ion-badge>
     </ion-button>
   </ion-buttons>
 </ion-toolbar>

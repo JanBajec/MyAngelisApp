@@ -11,7 +11,8 @@ export class Data {
   colors?: string[];
   quality?: string;
   sizes?: string[];
-  categories?: string[];
+  categories: string[];
+  subCategories?: string[];
   primaryMediaUrl?: string;
   additionalMediaUrls?: string[]; // dodano za ta app od tu gor
   cardTags?: [];

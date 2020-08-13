@@ -8,6 +8,8 @@ import { Location} from '@angular/common';
 })
 export class SearchPage implements OnInit {
 
+  searchInput = '';
+
   constructor(private location: Location) { }
 
   ngOnInit() {

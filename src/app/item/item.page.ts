@@ -92,6 +92,10 @@ export class ItemPage implements OnInit {
     return this.dataService.getPrice(productId);
   }
 
+  getNumOfItemsInCart(): number {
+    return this.cartService.getNumOfItemsInCart();
+  }
+
   addToCart(itemId: string) {
     this.cartService.addToCart(new CartProductId(itemId));
   }
